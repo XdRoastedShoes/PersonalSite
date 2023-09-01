@@ -1,0 +1,81 @@
+---
+import { getCollection } from "astro:content";
+import { Picture } from "@astrojs/image/components";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+
+// Filter team entries with 'draft: false' & date before current date
+const publishedTeamMembers = await getCollection("team", ({ data }) => {
+  return !data.draft && data.publishDate < new Date();
+});
+---
+
+<Layout title="About">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">About</Fragment>
+      <Fragment slot="desc"></Fragment>
+    </Sectionhead>
+
+    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
+      <h2 class="font-bold text-3xl text-gray-800 text-center">
+        Documenting my journey in life.
+      </h2>
+      <p class="text-lg leading-relaxed text-slate-500">
+        
+      </p>
+    </div>
+    <!-- <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
+      {
+        publishedTeamMembers.map((teamMemberEntry) => (
+          <div class="group">
+            <div class="w-full aspect-square">
+              <Picture
+                src={teamMemberEntry.data.avatar.src}
+                alt={teamMemberEntry.data.avatar.alt}
+                sizes="(max-width: 800px) 100vw, 400px"
+                widths={[200, 400]}
+                aspectRatio="1:1"
+                background="#ffffff"
+                fit="cover"
+                position="center"
+                class="w-full rounded-md rounded transition group-hover:-translate-y-1 group-hover:shadow-xl"
+              />
+            </div>
+
+            <div class="mt-4 text-center">
+              <h2 class="text-lg text-gray-800">
+                {teamMemberEntry.data.name}
+              </h2>
+              <h3 class="text-sm text-slate-500">
+                {teamMemberEntry.data.title}
+              </h3>
+            </div>
+          </div>
+        ))
+      }
+    </div> -->
+    <div>
+    <p class="inline-block text-center">
+    I love problem solving and my other hobbies include mathematics, programming and tinkering with computers. 
+    <br>
+    I am currently a student in Grade-12th and will be giving my A levels and going to university next year.
+    <br>
+    I have built this website mostly to document the projects which I will be doing, learning new skills, talking about the things which I am interested in and any other thoughts which come to my mind. I will be adding some personal updates here and there and also share the book notes from the book which I am currently reading. 
+    <br>
+      Another reason I built this site is to be free of the centralised social media services everyone uses. The web should not be just two or three mega-corps running their ad machines. With this website I hope to contribute a little bit to making that dream come true. 
+    </p>
+    </div>
+<!--     
+    <div>
+      <h1 class="text-5xl text-center font-bold"> My projects</h1>
+    </div>   
+    
+    <div>
+      <p class="underline inline-block align-middle">
+        Here are some projects
+      </p> -->
+    </div>
+  </Container>
+</Layout>
