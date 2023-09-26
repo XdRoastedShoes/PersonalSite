@@ -27,3 +27,5 @@ I have also added book notes for a few of those books
 ## The Conquest of New Spain - Bernal Diaz
 ## Change By Design - Tim Brown
 ## Fooled By Randomness - Nassism Nicholas Taleb
+## The Theory of Everything: The Origin and Fate of the Universe - Stephen Hawking
+## Philosophy of Physics: Space and Time - Tim Maudlin
