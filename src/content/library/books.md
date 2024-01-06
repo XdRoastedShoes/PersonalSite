@@ -7,10 +7,6 @@ category: ""
 author: "Vinayak Arora"
 tags: [reading, books]
 ---
-In my opinion books are one of the best mediums ever created.
-These are the books which I have read in the past year, expect to see this list grow a lot more as I get into the habit of reading
-I have also added book notes for a few of those books
-
 ## A mind for Numbers - Dr Oakley
 ## Everything is fu-ked - Mark Manson
 ## The Subtle art of not giving a fuck - Mark Manson
@@ -26,6 +22,6 @@ I have also added book notes for a few of those books
 ## The Infinite Game - Simon Senek
 ## The Conquest of New Spain - Bernal Diaz
 ## Change By Design - Tim Brown
-## Fooled By Randomness - Nassism Nicholas Taleb
+## Fooled By Randomness - Nassim Nicholas Taleb
 ## The Theory of Everything: The Origin and Fate of the Universe - Stephen Hawking
 ## Philosophy of Physics: Space and Time - Tim Maudlin
