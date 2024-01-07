@@ -1,63 +1,44 @@
 ---
-import { getCollection } from "astro:content";
-import { Picture } from "@astrojs/image/components";
-import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
-import Sectionhead from "@components/sectionhead.astro";
-
-// Filter blog entries with 'draft: false' & date before current date
-const publishedBlogEntries = await getCollection("library", ({ data }) => {
-  return !data.draft && data.publishDate < new Date();
-});
-
-// Sort content entries by publication date
-publishedBlogEntries.sort(function (a, b) {
-  return b.data.publishDate.valueOf() - a.data.publishDate.valueOf();
-});
+import Hero from "@components/hero.astro";
+import Layout from "@layouts/Layout.astro";
 ---
 
-<Layout title="Personal Library">
+<Layout title="">
   <Container>
-    <Sectionhead>
-      <Fragment slot="title">Personal Library</Fragment>
-      <Fragment slot="desc">
-        This is my personal library
-    </Fragment>
-    </Sectionhead>
-    <main class="mt-16">
-      <ul class="grid gap-16 max-w-4xl mx-auto">
-        {
-          publishedBlogEntries.map((blogPostEntry, index) => (
-            <li>
-              <a href={`/library/${blogPostEntry.slug}`}>
-                <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
-                  <div>
-                    <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
-                      {blogPostEntry.data.category}
-                    </span>
+ <div class="flex justify-center">
+ <ul class="text-black">
+ <li> A mind for Numbers - Dr Oakley </li> 
+ <li>Harry Potter series </li>
+<li>Witcher Series</li>
+ <li>Everything is fu-ked - Mark Manson</li>
+ <li>The Subtle art of not giving a fuck - Mark Manson</li>
+<li>A Mathematician's Apology - G.H Hardy</li> 
+ <li>Six Easy Pieces - Richard P. Feynman</li>
+ <li>You^2 - Price Pritchett</li>
+ <li>Prelude to Mathematics - W.W. Sawyer</li>
+ <li>HBR at 100</li>
+ <li>The 7 Habits of Highly Effective People - Stephen R. Covey</li>
+<li>The Art Of War - Sun Tzu</li>
+ <li>Think Again - Adam Grant</li>
+ <li>Atomic Habits - James Clear</li>
+ <li>The Infinite Game - Simon Senek</li>
+ <li>Change By Design - Tim Brown</li>
+ <li>Fooled By Randomness - Nassim Nicholas Taleb</li>
+ <li>The Theory of Everything: The Origin and Fate of the Universe - Stephen Hawking</li>
+ <li>1984 - George Orwell</li>
+ <li>How to Make an Apple Pie From Scratch - Harry Cliff</li>
+ <li>Letters From a Stoic - Seneca</li>
+ <li>Antifragile - Nassim Nicholas taleb</li>
+ <li>Skin in the Game - Nassim Nicholas Taleb</li>
+ <li>Black Swan - Nassim Nicholas Taleb</li>
+ <li>Meditations - Marcus Aurelius</li>
+ <li>The Age of Surveillance Capitalism - Shoshana Zuboff</li>
+ <li>Philosophy of Physics: Space and Time - Tim Maudlin</li>
+ <li>The Conquest of New Spain - Bernal Diaz</li>
+ <li>Gulag - Anne Applebaum</li>
+ </ul>
+ </div> 
 
-                    <h2 class="text-3xl font-semibold leading-snug tracking-tight mt-1 ">
-                      {blogPostEntry.data.title}
-                    </h2>
-
-                    <div class="flex gap-2 mt-3">
-                      <span class="text-gray-400">
-                        {blogPostEntry.data.author}
-                      </span>
-                      <span class="text-gray-400">• </span>
-                      <time
-                        class="text-gray-400"
-                        datetime={blogPostEntry.data.publishDate.toISOString()}>
-                        {blogPostEntry.data.publishDate.toDateString()}
-                      </time>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </main>
   </Container>
 </Layout>
